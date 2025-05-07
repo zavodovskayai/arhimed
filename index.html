@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <base href="./Main-Archimed-Page">
+    <title>Главная страница Архимед</title>
+    <meta name="description" content="Интернет-магазин. Импортёр медизделий и расходных материалов. Оптовые и розничные продажи изделий для медицины, ветеринарии и бьюти сферы (косметологии).">
+    <link rel="stylesheet" href="./styles/index.css?v=1.0" />
+
+    <link rel="icon" href="./images/favicon.ico" sizes="any" type="image/x-icon">
+    <link rel="icon" href="./images/icon-footer.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="./images/favicon.ico">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <!-- Логотип -->
+            <div class="logo">
+                <img src="./images/logo.svg" alt="Логотип" class="logo-img">
+            </div>
+
+            <!-- Поиск товаров -->
+            <!-- Поисковая система -->
+            <div class="search-container">
+                <input type="text" class="search-input" placeholder="Введите запрос...">
+                <button class="search-button">
+                    <img src="./images/search.svg" alt="Поиск">
+                </button>
+            </div>
+
+            <!-- Кнопки авторизации и регистрации -->
+            <div class="auth-buttons">
+                <a href="./pages/userAuth.html" class="btn auth-btn white-btn">Авторизация</a>
+                <a href="./pages/userReg.html" class="btn auth-btn purple-btn">Регистрация</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Закреплённый раздел -->
+    <div class="sticky-menu">
+        <div class="container">
+            <!-- Ссылки на разделы -->
+            <nav class="menu-links">
+                <a href="./index.html">Главная</a>
+                <a href="./pages/about.html">О нас</a>
+                <a href="./pages/news.html">Новости</a>
+                <a href="#products">Продукция</a>
+                <a href="./pages/contacts.html">Контакты</a>
+            </nav>
+
+            <!-- Иконки-ссылки -->
+            <div class="menu-icons">
+                <a href="tel:+79522016812" class="icon-link-media" target="_blank">
+                    <img src="./images/phone.svg" alt="Номер телефона" class="icon">
+                </a>
+                <!-- Иконка 1 -->
+                <a href="https://t.me/spb_arhimed" class="icon-link-media" target="_blank">
+                    <img src="./images/telegram.svg" alt="Телеграм Архимед" class="icon">
+                </a>
+                <!-- Иконка 2 -->
+                <a href="https://api.whatsapp.com/send?phone=79522016812" class="icon-link-media" target="_blank">
+                    <img src="./images/whatsapp.svg" alt="Вотсапп Архимед" class="icon">
+                </a>
+                <a href="https://vk.com/spb.arhimed" class="icon-link-media" target="_blank">
+                    <img src="./images/vk.svg" alt="ВК Архимед" class="icon">
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Основной контент -->
+    <main>
+
+        <section class="section">
+            <!-- Текстовый блок -->
+            <div class="text-content">
+                <h1>Одноразовые расходные материалы для <span>предприятий</span></h1>
+                <p>Расходные одноразовые материалы для медицины, салонов красоты и производств с доставкой по всей России и по доступной цене</p>
+                <a href="#order_call" class="button">Заказать звонок</a>
+            </div>
+    
+            <!-- Сетка изображений -->
+            <div class="image-grid">
+                <div class="image-item">
+                    <img src="../images/img-cat-1.png" alt="Салоны красоты">
+                    <div class="label">Салоны красоты</div>
+                </div>
+                <div class="image-item">
+                    <img src="../images/img-cat-2.png" alt="Медицина">
+                    <div class="label">Медицина</div>
+                </div>
+                <div class="image-item">
+                    <img src="../images/img-cat-3.png" alt="Рестораны">
+                    <div class="label-1">Рестораны</div>
+                    <div class="label">Пищевые производства</div>
+                </div>
+                <div class="image-item">
+                    <img src="../images/img-cat-4.png" alt="Аптечные сети">
+                    <div class="label">Аптечные сети</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact-section">
+            <!-- Время работы -->
+            <div class="contact-item">
+                <div class="icon-contact">
+                    <!-- Место для иконки -->
+                    <img src="../images/timer.svg" alt="Время работы">
+                </div>
+                <div class="text-contact">
+                    <h3>Время работы</h3>
+                    <p>Пн-пт с 9:00 до 17:30</p>
+                </div>
+            </div>
+    
+            <!-- Адрес -->
+            <div class="contact-item">
+                <div class="icon-contact">
+                    <!-- Место для иконки -->
+                    <img src="../images/geo.svg" alt="Месторасположение">
+                </div>
+                <div class="text-contact">
+                    <h3>Адрес</h3>
+                    <p>ул. Дегтярева, д.4, офис 504</p>
+                </div>
+            </div>
+    
+            <!-- Номер -->
+            <div class="contact-item">
+                <div class="icon-contact">
+                    <!-- Место для иконки -->
+                    <img src="../images/phone.svg" alt="Номер">
+                </div>
+                <div class="text-contact">
+                    <h3>Номер</h3>
+                    <a href="tel:+78123171127" target="_blank">+7 (812) 317 11 27</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="section-1">
+            <!-- Блок с изображением -->
+            <div class="image-container-1">
+                <img src="../images/why-image.png" alt="Изображение товара">
+            </div>
+    
+            <!-- Текстовый блок -->
+            <div class="text-content-1">
+                <h1>Что мы предлагаем?</h1>
+                <p>Наша компания предлагает низкие цены, так как размещает заказы напрямую на заводах Китая, Малайзии, Индии. Мы тщательно следим за качеством нашего товара: соответствие веса, плотности сырья. Оказываем поддержку в участии в государственных закупках.</p>
+                <a href="#" class="button">Наши товары</a>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <!-- Блок 1 -->
+            <div class="stat-block">
+                <h1>80%<span>+</span></h1>
+                <p>Товара в наличии на складе</p>
+            </div>
+    
+            <!-- Блок 2 -->
+            <div class="stat-block">
+                <h1>1000<span>+</span></h1>
+                <p>Товарных позиций в прайсе</p>
+            </div>
+    
+            <!-- Блок 3 -->
+            <div class="stat-block">
+                <h1>10<span>+</span></h1>
+                <p>Опытных менеджеров помогут определиться с выбором</p>
+            </div>
+    
+            <!-- Блок 4 -->
+            <div class="stat-block">
+                <h1>1000<span>+</span></h1>
+                <p>Компаний выбирают работать с нами</p>
+            </div>
+        </section>
+
+        <section class="delivery-section">
+            <div class="container">
+                <h2>Условия доставки</h2>
+                <div class="delivery-content">
+                    <div class="delivery-item">
+                        <h3>Осуществляем бесплатную доставку:</h3>
+                        <p>По г. Санкт-Петербург, в пределах КАД;</p>
+                    </div>
+                    <div class="delivery-item">
+                        <h3>Москва и регионы:</h3>
+                        <p>До транспортной компании (при заказе от 5 000 руб);</p>
+                    </div>
+                    <div class="delivery-item">
+                        <h3>Самовывоз:</h3>
+                        <p>Возможен самовывоз.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="application" class="application-section">
+            <h2>Сферы применения нашей продукции</h2>
+            <div class="container">
+                <div class="application-grid">
+                    <!-- Аптеки -->
+                    <div class="application-item">
+                        <img src="./images/using-1.png" alt="Аптеки">
+                        <p>Аптеки</p>
+                    </div>
+        
+                    <!-- Клиники -->
+                    <div class="application-item">
+                        <img src="./images/using-2.png" alt="Клиники">
+                        <p>Клиники</p>
+                    </div>
+        
+                    <!-- Стоматология -->
+                    <div class="application-item">
+                        <img src="./images/using-3.png" alt="Стоматология">
+                        <p>Стоматология</p>
+                    </div>
+        
+                    <!-- Ветеринарные клиники -->
+                    <div class="application-item">
+                        <img src="./images/using-4.png" alt="Ветеринарные клиники">
+                        <p>Ветеринарные клиники</p>
+                    </div>
+        
+                    <!-- Пищевые производства -->
+                    <div class="application-item">
+                        <img src="./images/using-5.png" alt="Пищевые производства">
+                        <p>Пищевые производства</p>
+                    </div>
+        
+                    <!-- Салоны красоты -->
+                    <div class="application-item">
+                        <img src="./images/using-6.png" alt="Салоны красоты">
+                        <p>Салоны красоты</p>
+                    </div>
+        
+                    <!-- Лаборатории -->
+                    <div class="application-item">
+                        <img src="./images/using-7.png" alt="Лаборатории">
+                        <p>Лаборатории</p>
+                    </div>
+        
+                    <!-- Оборудование -->
+                    <div class="application-item">
+                        <img src="./images/using-8.png" alt="Оборудование">
+                        <p>Оборудование</p>
+                    </div>
+        
+                    <!-- Производства -->
+                    <div class="application-item">
+                        <img src="./images/using-9.png" alt="Производства">
+                        <p>Производства</p>
+                    </div>
+        
+                    <!-- Собственное производство -->
+                    <div class="application-item">
+                        <img src="./images/using-10.png" alt="Собственное производство">
+                        <p>Собственное производство</p>
+                    </div>
+        
+                    <!-- Средства личной защиты -->
+                    <div class="application-item">
+                        <img src="./images/using-11.png" alt="Средства личной защиты">
+                        <p>Средства личной защиты</p>
+                    </div>
+                </div>
+            </div>
+        </section>        
+        
+
+    </main>
+
+    <div class="container" id="order_call">
+        <!-- Контейнер для форм -->
+        <div class="form-container">
+            <h2>Свяжитесь с нами</h2>
+
+            <!-- Кнопки переключения форм -->
+            <div class="toggle-buttons">
+                <button id="emailFormBtn" class="active">Отправить письмо</button>
+                <button id="callFormBtn">Заказать звонок</button>
+            </div>
+
+            <!-- Форма отправки письма -->
+            <form id="emailForm" class="active" method="POST" action="./php/send_email.php" target="_blank">
+                <label for="name">Как к Вам обращаться?</label>
+                <input type="text" id="name" name="name" placeholder="Введите Ваше имя" required>
+                <label for="name">Ваш Email:</label>
+                <input type="email" id="email" name="email" placeholder="Введите ваш email" required>
+                <label for="message">Сообщение:</label>
+                <input type="text" id="message" name="message" placeholder="Введите ваше сообщение" required>
+                <button type="submit">Отправить письмо</button>
+            </form>
+
+            <!-- Форма заказа звонка -->
+            <form id="callForm" method="POST" action="./php/request_call.php" target="_blank">
+                <label for="name">Как к Вам обращаться?</label>
+                <input type="text" id="name" name="name" placeholder="Введите Ваше имя" required>
+                <label for="phone">Ваш номер телефона:</label>
+                <input type="tel" id="phone" name="phone" placeholder="Введите ваш номер телефона" required>
+                <label for="message">Сообщение:</label>
+                <input type="text" id="message" name="message" placeholder="Введите ваше сообщение" required>
+                <button type="submit">Заказать звонок</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Подвал -->
+    <footer class="footer">
+        <div class="container">
+            <!-- Логотип -->
+            <div class="footer-logo">
+                <img src="../images/icon-footer.svg" alt="Логотип" class="logo-img">
+            </div>
+
+            <!-- Меню -->
+            <div class="footer-section">
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="./index.html">Главная</a></li>
+                    <li><a href="./pages/about.html">О нас</a></li>
+                    <li><a href="#products">Продукция</a></li>
+                    <li><a href="./pages/contacts.html">Контакты</a></li>
+                    <li><a href="./pages/news.html">Новости</a></li>
+                    <li><a href="#promotions">Акции</a></li>
+                </ul>
+            </div>
+
+            <!-- Продукция -->
+            <div class="footer-section">
+                <h3>Продукция</h3>
+                <ul>
+                    <li><a href="#archimed-products">Товары производства Архимед</a></li>
+                    <li><a href="#pharmacies">Аптеки</a></li>
+                    <li><a href="#clinics">Клиники</a></li>
+                    <li><a href="#dentistry">Стоматологии</a></li>
+                </ul>
+            </div>
+
+            <!-- Соц.Сети -->
+            <div class="footer-section">
+                <h3>Соц.Сети</h3>
+                <ul>
+                    <li>
+                        <img class='contact-icons' src="../images/whatsapp_light.svg" alt="Whatsapp">
+                        <a href="https://api.whatsapp.com/send?phone=79522016812" target="_blank">Whatsapp</a>
+                    </li>
+                    <li>
+                        <img class='contact-icons' src="../images/telegram_light.svg" alt="Telegram">
+                        <a href="https://t.me/spb_arhimed" target="_blank">Telegram</a>
+                    </li>
+                    <li>
+                        <img class='contact-icons vk_light'src="../images/vk_light.svg" alt="VK">
+                        <a href="https://vk.com/spb.arhimed" target="_blank">VK</a>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Контакты -->
+            <div class="footer-section">
+                <h3>Контакты</h3>
+                <ul>
+                    <li>
+                        <img class='contact-icons' src="../images/phone_light.svg" alt="Phone">
+                        <a href="tel:+78123171127" target="_blank">+7 (812) 317 11 27</a>
+                    </li>
+                    <li>
+                        <img class='contact-icons' src="../images/location_light.svg" alt="Location">
+                        <a href="https://yandex.ru/maps/org/arkhimed_severo_zapad/173906874662/?ll=30.427301%2C59.951578&z=13" target="_blank">Санкт-Петербург, ул. Дегтярева, д.4, офис 504, 195248</a>
+                    </li>
+                    <li>
+                        <img class='contact-icons' src="../images/time_light.svg" alt="Time">
+                        Пн-пт с 9:00 до 17:30
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Нижняя строка -->
+        <div class="footer-bottom">
+            <p>Copyright ©2025 Archimed</p>
+            <a href="../pages/policy.html">Официальная политика</a>
+        </div>
+    </footer>
+
+    <!-- Подключение внешнего скрипта -->
+    <script src="./scripts/changeForm.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Авторизация сотрудника</title>
+    <link rel="stylesheet" href="../styles/index.css?v=1.0">
+    <link rel="icon" href="../images/favicon.ico" sizes="any" type="image/x-icon">
+    <link rel="icon" href="../images/icon-footer.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="../images/favicon.ico">
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+</head>
+<body class="body_auth">
+    <!-- Контейнер авторизации -->
+    <div class="auth-container">
+        <h1>Авторизация <span>сотрудника</span></h1>
+        <form id="authForm">
+            <input type="text" id="username" placeholder="Логин" required>
+            <input type="password" id="password" placeholder="Пароль" required>
+            <p class="error-message" id="errorMessage">Неверный логин или пароль!</p>
+            <button type="submit" class="button">Войти</button>
+        </form>
+    </div>
+
+    <script src="../scripts/MiraAuth.js"></script>
+</body>
+</html>
