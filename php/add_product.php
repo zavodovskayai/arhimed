@@ -1,4 +1,14 @@
 <?php
+session_start();
+require __DIR__ . '/bd.php';
+
+if (!isset($_SESSION['user_id']) || $_SESSION['user_role'] !== 'admin') {
+    http_response_code(403);
+    exit('Доступ запрещён');
+}
+
+$created_by = $_SESSION['user_id'];
+
 require __DIR__ . '/bd.php';;
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
