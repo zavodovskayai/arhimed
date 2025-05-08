@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>Добавление товара</title>
-  <link rel="stylesheet" href="../styles/style.css">
+  <link rel="stylesheet" href="../styles/index.css">
 </head>
 <body>
   <h1>Добавление товара</h1>
@@ -41,9 +41,25 @@
       <div id="applicationCheckboxes"></div>
     </label><br>
 
+    <label>Стерильность:
+        <select name="sterility">
+          <option value="">-- не указано --</option>
+          <option value="да">Да</option>
+          <option value="нет">Нет</option>
+        </select>
+      </label><br>
+      
+      <label>Объём (с единицей измерения):
+        <input type="text" name="volume">
+      </label><br>
+
     <label>Фотографии:
-      <input type="file" name="images[]" multiple accept="image/*">
+        <input type="file" name="images[]" multiple accept="image/*">
     </label><br><br>
+
+    <label>
+        <input type="checkbox" name="visible" value="1" checked> Показывать товар
+    </label>
 
     <button type="submit">Добавить товар</button>
   </form>

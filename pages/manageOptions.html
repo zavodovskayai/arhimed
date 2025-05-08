@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Управление категориями и сферами</title>
+</head>
+<body>
+  <h2>Добавить категорию</h2>
+  <form action="/php/add_category.php" method="POST">
+    <input type="text" name="category_name" placeholder="Категория">
+    <button type="submit">Добавить</button>
+  </form>
+
+  <h2>Добавить подкатегорию</h2>
+  <form action="/php/add_subcategory.php" method="POST">
+    <select name="category_id" id="categorySelect"></select>
+    <input type="text" name="subcategory_name" placeholder="Подкатегория">
+    <button type="submit">Добавить</button>
+  </form>
+
+  <h2>Добавить сферу применения</h2>
+  <form action="/php/add_application.php" method="POST">
+    <input type="text" name="application_name" placeholder="Сфера применения">
+    <button type="submit">Добавить</button>
+  </form>
+
+  <script>
+    fetch('/php/get_categories.php')
+      .then(res => res.json())
+      .then(data => {
+        const select = document.getElementById('categorySelect');
+        data.forEach(cat => {
+          const opt = document.createElement('option');
+          opt.value = cat.id;
+          opt.textContent = cat.name;
+          select.appendChild(opt);
+        });
+      });
+  </script>
+
+<h2>Существующие категории</h2>
+<ul id="categoryList"></ul>
+
+<h2>Сферы применения</h2>
+<ul id="applicationList"></ul>
+
+<script>
+  function loadLists() {
+    fetch('/php/get_all_options.php')
+      .then(res => res.json())
+      .then(data => {
+        const catList = document.getElementById('categoryList');
+        catList.innerHTML = '';
+        data.categories.forEach(cat => {
+          const li = document.createElement('li');
+          li.innerHTML = ${cat.name} <button onclick="deleteOption('category', ${cat.id})">Удалить</button>;
+          catList.appendChild(li);
+        });
+
+        const appList = document.getElementById('applicationList');
+        appList.innerHTML = '';
+        data.applications.forEach(app => {
+          const li = document.createElement('li');
+          li.innerHTML = ${app.name} <button onclick="deleteOption('application', ${app.id})">Удалить</button>;
+          appList.appendChild(li);
+        });
+      });
+  }
+
+  function deleteOption(type, id) {
+    if (confirm('Удалить?')) {
+      fetch('/php/delete_option.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ type, id })
+      }).then(() => loadLists());
+    }
+  }
+
+  loadLists();
+</script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Продукция</title>
+    <style>
+    /* Добавь стили по необходимости */
+    </style>
+</head>
+<body>
+    <h1>Продукция</h1>
+
+    <div id="filters">
+        <select id="categoryFilter">
+        <option value="">Все категории</option>
+        </select>
+
+        <select id="subcategoryFilter">
+        <option value="">Все подкатегории</option>
+        </select>
+
+        <select id="applicationFilter">
+        <option value="">Все сферы применения</option>
+        </select>
+    </div>
+
+    <div id="productsContainer">
+        <!-- Здесь будут отображаться карточки товаров -->
+    </div>
+
+    <script>
+        // Загрузка фильтров
+        fetch('/php/get_filters.php')
+        .then(res => res.json())
+        .then(data => {
+            const categorySelect = document.getElementById('categoryFilter');
+            data.categories.forEach(cat => {
+            const option = document.createElement('option');
+            option.value = cat.id;
+            option.textContent = cat.name;
+            categorySelect.appendChild(option);
+            });
+
+            const applicationSelect = document.getElementById('applicationFilter');
+            data.applications.forEach(app => {
+            const option = document.createElement('option');
+            option.value = app.id;
+            option.textContent = app.name;
+            applicationSelect.appendChild(option);
+            });
+        });
+
+        // Обработка фильтров
+        document.getElementById('categoryFilter').addEventListener('change', loadProducts);
+        document.getElementById('subcategoryFilter').addEventListener('change', loadProducts);
+        document.getElementById('applicationFilter').addEventListener('change', loadProducts);
+
+        function loadProducts() {
+        const category = document.getElementById('categoryFilter').value;
+        const subcategory = document.getElementById('subcategoryFilter').value;
+        const application = document.getElementById('applicationFilter').value;
+
+        const params = new URLSearchParams();
+        if (category) params.append('category', category);
+        if (subcategory) params.append('subcategory', subcategory);
+        if (application) params.append('application', application);
+
+        fetch('/php/get_products.php?' + params.toString())
+            .then(res => res.json())
+            .then(data => {
+            const container = document.getElementById('productsContainer');
+            container.innerHTML = '';
+            data.forEach(product => {
+                const card = document.createElement('div');
+                card.innerHTML = `
+                <h3>${product.name}</h3>
+                <p>${product.description}</p>
+                <p>Цена: ${product.price_single} руб.</p>
+                <button onclick="viewProduct(${product.id})">Подробнее</button>
+                `;
+                container.appendChild(card);
+            });
+            });
+        }
+
+        function viewProduct(id) {
+        // Реализуй модальное окно или переход на страницу с подробной информацией
+        alert('Показать подробную информацию о товаре с ID: ' + id);
+        }
+
+        // Загрузка товаров при загрузке страницы
+        loadProducts();
+    </script>
+
+    <script>
+        document.getElementById('categoryFilter').addEventListener('change', function() {
+        const categoryId = this.value;
+        const subcategorySelect = document.getElementById('subcategoryFilter');
+        subcategorySelect.innerHTML = '<option value="">Все подкатегории</option>';
+    
+        if (categoryId) {
+            fetch('/php/get_subcategories.php?category_id=' + categoryId)
+            .then(res => res.json())
+            .then(data => {
+                data.forEach(subcat => {
+                const option = document.createElement('option');
+                option.value = subcat.id;
+                option.textContent = subcat.name;
+                subcategorySelect.appendChild(option);
+                });
+            });
+        }
+    
+        loadProducts();
+        });
+    </script>
+</body>
+</html>
